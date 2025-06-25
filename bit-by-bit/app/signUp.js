@@ -10,10 +10,12 @@ import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { Switch } from "@/components/ui/switch";
 
 
+
+
 export default function Home() {
   return (
     <div>
-      
+      <p>hello</p> 
     </div>
   );
 }
