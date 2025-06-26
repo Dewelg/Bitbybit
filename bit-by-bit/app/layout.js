@@ -1,3 +1,11 @@
+import Link from "next/link"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger
+} from "@/components/ui/navigation-menu"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +30,41 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav>
+          <div className="absolute top-3 right-20 p-4 flex items-center gap-x-2 text-primary-500">
+            <Link href="#" className="text-base hover:text-primary-600">Sign In</Link>
+            <p className="text-sm">or</p>
+            <Link href="#" className="text-base hover:text-primary-600">Register</Link>
+          </div>
+
+          <div className="absolute top-3 right-10 p-4">
+            <div className="flex flex-row flex-wrap items-center gap-12">
+              <Avatar>
+                <AvatarImage src="#" alt="#"></AvatarImage>
+                <AvatarFallback>PR</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+          <NavigationMenu viewport={false} className="absolute top-3 left-10 p-4">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Problems</NavigationMenuTrigger>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>About</NavigationMenuTrigger>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Pricing</NavigationMenuTrigger>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+      </nav>
         {children}
       </body>
     </html>
