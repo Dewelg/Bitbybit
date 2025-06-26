@@ -5,12 +5,10 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
 import { Label } from "@radix-ui/react-label"
 import { motion } from "framer-motion"
 import { Eye, EyeOff, Mail } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import Link from "next/link"
+
 
 
 
