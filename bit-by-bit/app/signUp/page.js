@@ -39,7 +39,7 @@ export default function SignUpForm() {
         if(user){
             await supabase.from("users").insert({
                 id: user.id,
-                full_Name: fullName,
+                full_name: fullName,
                 username: username
 
             })
@@ -60,7 +60,6 @@ export default function SignUpForm() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <form>
                             <div className="flex flex-col gap-6">
                                 <div className="grid gap-2">
                                     <div className="flex items-center">
@@ -111,7 +110,6 @@ export default function SignUpForm() {
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </CardContent>
                     <CardFooter className="flex-col gap-2">
                         <Button type="submit" className="w-full">
