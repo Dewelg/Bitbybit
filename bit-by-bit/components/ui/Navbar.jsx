@@ -32,9 +32,9 @@ export default function Navbar() {
       <nav>
         {/* right-side links */}
         <div className="absolute top-3 right-20 p-4 flex items-center gap-x-2 text-primary-500">
-          <Link href="/login" className="text-base hover:text-primary-600">Sign In</Link>
+          <Link href="/signIn" className="text-base hover:text-primary-600">Sign In</Link>
           <p className="text-sm">or</p>
-          <Link href="/register" className="text-base hover:text-primary-600">Register</Link>
+          <Link href="/signUp" className="text-base hover:text-primary-600">Register</Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
@@ -46,7 +46,6 @@ export default function Navbar() {
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -63,16 +62,24 @@ export default function Navbar() {
         <NavigationMenu viewport={false} className="absolute top-3 left-10 p-4">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+              <Link href="/home">
+                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Problems</NavigationMenuTrigger>
+              <Link href="problems">
+                <NavigationMenuTrigger>Problems</NavigationMenuTrigger>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>About</NavigationMenuTrigger>
+              <Link href="about">
+                <NavigationMenuTrigger>About</NavigationMenuTrigger>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Pricing</NavigationMenuTrigger>
+              <Link href="pricing">
+                <NavigationMenuTrigger>Pricing</NavigationMenuTrigger>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

@@ -14,6 +14,8 @@ import { Label } from "@/components/ui/label"
 import { Eye, EyeOff} from "lucide-react"
 import { useState } from "react"
 import supabase from "@/lib/supabase"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export default function SignUpForm() {
     const [email, setEmail] = useState('')
@@ -41,11 +43,14 @@ export default function SignUpForm() {
                 id: user.id,
                 full_name: fullName,
                 username: username
-
+                
             })
         }
-
+        
+        
         console.log("Sign up successful")
+        
+
     }
 
 
@@ -112,9 +117,11 @@ export default function SignUpForm() {
                             </div>
                     </CardContent>
                     <CardFooter className="flex-col gap-2">
-                        <Button type="submit" className="w-full">
-                        Create Account
-                        </Button>
+                        <Link href="/home" className="w-full">
+                            <Button type="submit" className="w-full">
+                                Create Account
+                            </Button>
+                        </Link>
                         <Button variant="outline" className="w-full">
                         Sign in with Google
                         </Button>
