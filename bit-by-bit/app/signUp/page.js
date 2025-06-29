@@ -122,9 +122,11 @@ export default function SignUpForm() {
                                 Create Account
                             </Button>
                         </Link>
-                        <Button variant="outline" className="w-full">
-                        Sign in with Google
-                        </Button>
+                        {/* <Link>  */}
+                            <Button variant="outline" className="w-full">
+                                Sign in with Google
+                            </Button>
+                        {/* </Link> */}
                     </CardFooter>
                 </Card>
             </form>

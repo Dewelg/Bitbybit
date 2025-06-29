@@ -1,6 +1,5 @@
 'use client'
 
-
 import Link from "next/link"
 import { Moon, Sun } from "lucide-react"
 import { useTheme, ThemeProvider } from "next-themes"
@@ -16,7 +15,9 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink
 } from "@/components/ui/navigation-menu"
 
 export default function Navbar() {
@@ -66,11 +67,35 @@ export default function Navbar() {
                 <NavigationMenuTrigger>Home</NavigationMenuTrigger>
               </Link>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link href="problems">
                 <NavigationMenuTrigger>Problems</NavigationMenuTrigger>
               </Link>
+              <NavigationMenuContent>
+                <ul className="grid w-[300px] gap-4">
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link href="#">
+                        <div className="font-medium">Topics</div>
+                        <div className="text-muted-foreground">
+                          Browse all learning topics.
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="#">
+                        <div className="font-medium">RoadMaps</div>
+                        <div className="text-muted-foreground">
+                          Full engineering learning roadmaps.
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+              </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link href="about">
                 <NavigationMenuTrigger>About</NavigationMenuTrigger>
